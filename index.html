@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Website</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <h1>Hey, I'm Sreevijay Sunil</h1>
+    <p>Aspiring Developer | Lifelong Learner | Gamer | Procrastinator</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/sreevijay-sunil-a8a705282/" target="_blank" class="social-icon linkedin">
+        <img src="assets/images/linked.png" alt="LinkedIn Icon" />
+        <span>LinkedIn</span>
+      </a>
+      <a href="https://www.instagram.com/imtotallysanefrfr/" target="_blank" class="social-icon instagram">
+        <img src="assets/images/insta.jpg" alt="Instagram Icon" />
+        <span>Instagram</span>
+      </a>
+      <a href="https://www.youtube.com/@imtotallysane3367" target="_blank" class="social-icon youtube">
+        <img src="assets/images/youtube.png" alt="YouTube Icon" />
+        <span>YouTube</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="about glass-card">
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p class="trackable">Hello! I'm Sreevijay, born in Kannur, Kerala, and raised partly in Chennai, Hyderabad, and Jaipur. I'm passionate about building stuff, be it a lego-set, or an entire project, learning cool stuff, and gaming. I enjoy coding, just thinking, for no reason (some call that procrastination or something idk), and gaming (I'm pretty good at it too).</p>
+      </div>
+      <div class="about-img">
+        <img src="assets/images/profile.jpeg" alt="Profile Picture" class="trackable">
+      </div>
+    </section>
+
+    <section class="local-photos glass-card">
+      <h2>My Birthplace</h2>
+      <div class="photo-gallery">
+        <img src="assets/images/local1.jpg" alt="Local Photo 1" class="trackable">
+        <img src="assets/images/local2.jpg" alt="Local Photo 2" class="trackable">
+      </div>
+    </section>
+
+    <section class="education glass-card">
+      <h2>Education</h2>
+      <ul>
+        <li class="trackable"><strong>LKG to 2nd standard: </strong>National Public School, Chennai</li>
+        <li class="trackable"><strong>3rd standard to 7th standard: </strong>Oxford Grammar School, Hyderabad</li>
+        <li class="trackable"><strong>8th standard to 12th standard: </strong>Teoler High School, Jaipur</li>
+        <li class="trackable"><strong>College: </strong>IIITH (Currently doing BTech in CSE, UG1)</li>
+      </ul>
+    </section>
+
+    <section class="skills glass-card">
+      <h2>Technical Skills</h2>
+      <ul>
+        <li class="trackable">Bash</li>
+        <li class="trackable">Git</li>
+        <li class="trackable">SQL</li>
+        <li class="trackable">MongoDB</li>
+        <li class="trackable">HTML & CSS</li>
+        <li class="trackable">JavaScript</li>
+        <li class="trackable">Python</li>
+        <li class="trackable">C</li>
+        <li class="trackable">C++</li>
+        <li class="trackable">Prompt Engineering</li>
+      </ul>
+      <h2>Non-Technical Skills</h2>
+      <ul>
+        <li class="trackable">Fide Rating - 1689, link to FIDE account - <a href="https://ratings.fide.com/profile/46614630" target="_blank">Click here</a></li>
+        <li class="trackable">Have played professional chess</li>
+        <li class="trackable">Know basic video editing</li>
+        <li class="trackable">Can sleep for more than 12 hours (PB is 16 hours)</li>
+        <li class="trackable">Can eat a lot</li>
+        <li class="trackable">Can game without a break for 3+ hours</li>
+        <li class="trackable"><a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank">Bet you won't click on this</a></li>
+      </ul>  
+    </section>
+
+    <section class="achievements glass-card">
+      <h2>Achievements</h2>
+      <ul>
+        <li class="trackable">Beating World Champion Gukesh at chess (we were 7 years old then)</li>
+        <li class="trackable">Bagging AIR 658 in JEE MAINS</li>
+        <li class="trackable">Bagging AIR 2556 in JEE ADVANCED</li>
+        <li class="trackable">Scoring 97% in 10th boards</li>
+        <li class="trackable">Scoring 93.6% in 12th boards</li>
+        <li class="trackable">Came 8th in under-7 Nationals in chess</li>
+        <li class="trackable">Beating Pantheon of Hallownest in Hollow Knight - <a href="https://www.youtube.com/watch?v=ouLZXreOX78" target="_blank">Video Evidence</a></li>
+        <li class="trackable">Beating Mortal Journey in Sekiro - <a href="https://www.youtube.com/watch?v=6VUikGIxYGY" target="_blank">Video Evidence</a></li>
+      </ul>
+    </section>
+
+    <section class="cv glass-card">
+      <h2>My CV</h2>
+      <p><a href="assets/docs/resume.pdf" target="_blank" class="button trackable">📄 View CV</a></p>
+    </section>
+
+    <section class="tracker glass-card">
+      <h2>Page Tracker</h2>
+      <p id="clickCount">Clicks: 0</p>
+      <p id="visitCount">Visits: 0</p>
+    </section>
+
+    <section class="text-analysis glass-card">
+      <h2>Text Analysis Tool</h2>
+      <textarea id="textInput" placeholder="Enter your text here (up to 10,000 words)..." rows="10"></textarea>
+      <button id="analyzeBtn" class="button">Analyze Text</button>
+      <div id="analysisResults">
+        <h3>Analysis Results:</h3>
+        <div id="basicStats"></div>
+        <div id="pronounStats"></div>
+        <div id="prepositionStats"></div>
+        <div id="articleStats"></div>
+      </div>
+    </section>
+  </main>
+
+  <button id="scrollTopBtn">↑</button>
+  <script src="js/main.js"></script>
+  <div class="custom-cursor"></div>
+</body>
+</html>
