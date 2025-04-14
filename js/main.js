@@ -156,7 +156,84 @@ function setupTextAnalysis() {
   });
 
   function analyzeText(text) {
-    // ... (keep the existing analyzeText function implementation)
+    // Basic Statistics
+    const letters = text.replace(/[^a-zA-Z]/g, "").length;
+    const words = text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
+    const spaces = text.split(" ").length - 1;
+    const newlines = text.split("\n").length - 1;
+    const specialChars = text.replace(/[a-zA-Z0-9\s]/g, "").length;
+
+    document.getElementById('basicStats').innerHTML = `
+      <h4>Basic Statistics:</h4>
+      <p>Letters: ${letters}</p>
+      <p>Words: ${words}</p>
+      <p>Spaces: ${spaces}</p>
+      <p>Newlines: ${newlines}</p>
+      <p>Special Characters: ${specialChars}</p>
+    `;
+
+    // Pronouns Analysis
+    const pronouns = ['i', 'me', 'my', 'mine', 'myself', 
+                     'you', 'your', 'yours', 'yourself', 
+                     'he', 'him', 'his', 'himself', 
+                     'she', 'her', 'hers', 'herself', 
+                     'it', 'its', 'itself', 
+                     'we', 'us', 'our', 'ours', 'ourselves', 
+                     'they', 'them', 'their', 'theirs', 'themselves'];
+    
+    const pronounCounts = {};
+    pronouns.forEach(pronoun => {
+      const regex = new RegExp(`\\b${pronoun}\\b`, 'gi');
+      const matches = text.match(regex);
+      pronounCounts[pronoun] = matches ? matches.length : 0;
+    });
+
+    let pronounHTML = '<h4>Pronouns:</h4>';
+    for (const [pronoun, count] of Object.entries(pronounCounts)) {
+      if (count > 0) {
+        pronounHTML += `<p>${pronoun}: ${count}</p>`;
+      }
+    }
+    document.getElementById('pronounStats').innerHTML = pronounHTML;
+
+    // Prepositions Analysis
+    const prepositions = ['about', 'above', 'across', 'after', 'against', 'along', 'among', 'around', 
+                         'at', 'before', 'behind', 'below', 'beneath', 'beside', 'between', 'beyond', 
+                         'by', 'down', 'during', 'for', 'from', 'in', 'inside', 'into', 'near', 'of', 
+                         'off', 'on', 'out', 'over', 'through', 'to', 'toward', 'under', 'until', 'up', 
+                         'upon', 'with', 'within', 'without'];
+    
+    const prepositionCounts = {};
+    prepositions.forEach(preposition => {
+      const regex = new RegExp(`\\b${preposition}\\b`, 'gi');
+      const matches = text.match(regex);
+      prepositionCounts[preposition] = matches ? matches.length : 0;
+    });
+
+    let prepositionHTML = '<h4>Prepositions:</h4>';
+    for (const [preposition, count] of Object.entries(prepositionCounts)) {
+      if (count > 0) {
+        prepositionHTML += `<p>${preposition}: ${count}</p>`;
+      }
+    }
+    document.getElementById('prepositionStats').innerHTML = prepositionHTML;
+
+    // Articles Analysis
+    const articles = ['a', 'an', 'the'];
+    const articleCounts = {};
+    articles.forEach(article => {
+      const regex = new RegExp(`\\b${article}\\b`, 'gi');
+      const matches = text.match(regex);
+      articleCounts[article] = matches ? matches.length : 0;
+    });
+
+    let articleHTML = '<h4>Articles:</h4>';
+    for (const [article, count] of Object.entries(articleCounts)) {
+      if (count > 0) {
+        articleHTML += `<p>${article}: ${count}</p>`;
+      }
+    }
+    document.getElementById('articleStats').innerHTML = articleHTML;
   }
 }
 
