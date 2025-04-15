@@ -237,10 +237,31 @@ function setupTextAnalysis() {
   }
 }
 
-// Initialize all components
+function setupRickRoll() {
+  const rickRollItem = document.getElementById('rickroll-item');
+  if (rickRollItem) {
+    const link = rickRollItem.querySelector('a');
+    if (link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default link behavior
+        window.open(this.href, '_blank'); // Still open the link in new tab
+        
+        // Change the text after a short delay
+        setTimeout(() => {
+          rickRollItem.innerHTML = 'Successfully Rick-Rolling an ISS TA';
+          rickRollItem.style.color = '#00ff00';
+          rickRollItem.style.fontWeight = 'bold';
+        }, 500);
+      });
+    }
+  }
+}
+
+
 document.addEventListener('DOMContentLoaded', function() {
   setupEventTracking();
   setupCustomCursor();
   setupScrollButton();
   setupTextAnalysis();
+  setupRickRoll();
 });
